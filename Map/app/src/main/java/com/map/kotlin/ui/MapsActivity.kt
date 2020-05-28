@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -263,7 +264,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 .position(bookmark.location)
                 .title(bookmark.name)
                 .snippet(bookmark.phone)
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                .icon(bookmark.categoryResourceId?.let { BitmapDescriptorFactory.fromResource(it) })
                 .alpha(0.8f)
         )
         marker.tag = bookmark

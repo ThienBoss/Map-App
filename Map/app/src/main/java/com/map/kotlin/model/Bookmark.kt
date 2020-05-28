@@ -2,6 +2,7 @@ package com.map.kotlin.model
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.media.MediaRouter
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.map.kotlin.util.ImageUtils
@@ -18,7 +19,8 @@ data class Bookmark(
     var latitude: Double = 0.0,
     var longitude: Double = 0.0,
     var phone: String = "",
-    var notes : String = ""
+    var notes : String = "",
+    var category: String = ""
 ) {
     fun setImage(context: Context, image: Bitmap) {
         id?.let {
