@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.map.kotlin.model.Bookmark
 
-@Database(entities = arrayOf(Bookmark::class), version = 3)
+@Database(entities = arrayOf(Bookmark::class), version = 4)
 abstract class PlaceBookDatabase : RoomDatabase() {
 
     abstract fun bookmarkDao(): BookmarkDao

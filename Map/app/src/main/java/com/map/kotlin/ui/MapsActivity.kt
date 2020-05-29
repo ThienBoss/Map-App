@@ -49,6 +49,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         const val EXTRA_BOOKMARK_ID = "com.map.kotlin.EXTRA_BOOKMARK_ID"
         private const val REQUEST_LOCATION = 1
         private const val TAG = "MapsActivity1"
+        private const val AUTOCOMPLETE_REQUEST_CODE = 2
     }
 
     private var markers = HashMap<Long, Marker>()
@@ -327,5 +328,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         location.latitude = bookmark.location.latitude
         location.longitude = bookmark.location.longitude
         updateMapToLocation(location)
+    }
+
+    private fun searchAtCurrentLocation() {
+
     }
 }

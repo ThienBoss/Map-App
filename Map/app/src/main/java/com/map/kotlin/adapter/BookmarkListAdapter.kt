@@ -58,7 +58,9 @@ class BookmarkListAdapter(
         val bookmarkViewData = bookmarkData[position]
         holder.itemView.tag = bookmarkViewData
         holder.nameTextView.text = bookmarkViewData.name
-        holder.categoryImageView.setImageResource(R.drawable.common_google_signin_btn_icon_dark)
+        bookmarkViewData.categoryResourceId?.let {
+            holder.categoryImageView.setImageResource(it)
+        }
     }
 
     override fun getItemCount(): Int {

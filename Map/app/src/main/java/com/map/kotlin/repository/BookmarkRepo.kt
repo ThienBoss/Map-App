@@ -20,6 +20,9 @@ class BookmarkRepo(context: Context) {
     private var categoryMap: HashMap<Place.Type, String> = buildCategoryMap()
     private var allCategory: HashMap<String, Int> = buildCategoryIcon()
 
+    val categories : List<String>
+        get() = ArrayList(allCategory.keys)
+
     /**
      *
      */
