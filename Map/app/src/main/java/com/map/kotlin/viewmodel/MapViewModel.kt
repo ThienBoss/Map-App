@@ -96,5 +96,14 @@ class MapsViewModel(application: Application) :
         }
         return category
     }
+
+    fun addBookmark (latlng : LatLng): Long? {
+        val bookmark =  bookmarkRepo.createBookmark()
+        bookmark.name = "Untitled"
+        bookmark.longitude = latlng.longitude
+        bookmark.latitude = latlng.latitude
+        bookmark.category = "Other"
+        return bookmarkRepo.addBookmark(bookmark)
+    }
 }
 

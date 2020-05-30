@@ -242,6 +242,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         fab.setOnClickListener {
             searchAtCurrentLocation()
         }
+        map.setOnMapLongClickListener {
+            newBookmark(it)
+        }
     }
 
     class PlaceInfo(val place: Place? = null, val image: Bitmap? = null)
@@ -377,4 +380,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
         }
     }
+
+    private fun newBookmark(latlng: LatLng) {
+        GlobalScope.launch{
+            val bookmarkId = mapViewModel.addBookmark(latlng)
+            bookmarkId?.let {
+                startBookmarkDetails(it)
+            }
+        }
+    }
+
+
+
+
 }
